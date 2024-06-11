@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+}
+
+.header .city {
+  color: #FFFFFF;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.header .city_btn {
+  position: relative;
+  bottom: 27px;
+  left: calc(100% - 40px);
+  height: 20px;
+  background: url(./assets/city_btn.png) no-repeat;
+  background-size: contain;
+}
+
+.header .city_locate {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 8px;
+  height: 8px;
+  background: url(./assets/local_indicator_focused.png) no-repeat;
+  background-size: contain;
+  filter: invert(100%);
+}
+
+.container {
+  z-index: -1;
+  height: 90vh;
+  background: url(./assets/bg_first_clouudy.png) no-repeat;
+  background-size: 100% 100%;
+}
