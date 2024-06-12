@@ -27,19 +27,32 @@
 
 .header .city_locate {
   position: absolute;
-  bottom: 10%;
+  margin-top: -18px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 8px;
+  width: 6px;
   height: 8px;
   background: url(./assets/local_indicator_focused.png) no-repeat;
   background-size: contain;
   filter: invert(100%);
 }
 
+.header .tips {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 10px;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
 .container {
   z-index: -1;
   height: 90vh;
-  background: url(./assets/bg_first_cloudy.png) no-repeat;
+  background: url(./assets/bg_first_sunnight.png) no-repeat;
   background-size: 100% 100%;
 }
