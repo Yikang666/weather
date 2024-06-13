@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "XType";
+  src: url("./font/XType-Regular.otf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -50,9 +55,38 @@
   margin-top: 4px;
 }
 
-.container {
+.background {
   z-index: -1;
   height: 90vh;
-  background: url(./assets/bg_first_sunnight.png) no-repeat;
+  background: url(./assets/bg_first_cloudy.png) no-repeat;
   background-size: 100% 100%;
+}
+
+.container .temp {
+  margin-top: -120px;
+  margin-bottom: -80px;
+  margin-left: 20px;
+  font-size: 88px;
+  font-family: "XType";
+}
+
+.container .unit {
+  height: 68px;
+  margin-left: 94px;
+}
+
+.container .right {
+  text-align: right;
+  margin-right: 20px;
+  margin-top: -96px;
+}
+
+.container .right .weather {
+  font-size: 34px;
+}
+
+.container .right .airq {
+  color: #8C8C8C;
+  font-size: 14px;
+  margin-top: 6px;
 }

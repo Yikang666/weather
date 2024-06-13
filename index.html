@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>天气</title>
   
+  <link rel="icon" href="./favicon.png">
   <link rel="stylesheet" href="./index.css"></link>
 </head>
 
@@ -17,8 +18,20 @@
     <p class="tips">高温橙色预警</p>
   </div>
   
-  <div class="container"></div>
+  <div class="container">
+    <div class="background"></div>
+    
+    <div class="1">
+      <p class="temp">26</p>
+      <img class="unit" src="./assets/centigrade.png"></img>
+      <div class="right">
+        <p class="weather">多云</p>
+        <p class="airq">空气质量 轻度</p>
+      </div>
+    </div>
+  </div>
   
+  <script src="https://cdn.bootcdn.net/ajax/libs/pako/2.1.0/pako.min.js"></script>
   <script src="./index.js"></script>
 </body>
 
