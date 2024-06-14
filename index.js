@@ -14,8 +14,20 @@ if (navigator.geolocation) {
 function onSuccess(position) {
   var latitude = position.coords.latitude.toFixed(2).replace('.', '')
   var longitude = position.coords.longitude.toFixed(2).replace('.', '')
-  var locationJson = xhr0.open('GET', 'https://location.apps.oppomobile.com/xlocations/v1/' + latitude + '_' + longitude + '_zh-cn.json.gz')
-  console.log(this.Utf8ArrayToStr(new Uint8Array(pako.ungzip(locationJson))))
+  xhr0.open('GET', 'https://location.apps.oppomobile.com/xlocations/v1/' + latitude + '_' + longitude + '_zh-cn.json.gz', true)
+  xhr0.responseType = 'arraybuffer'
+  xhr0.onload = function() {
+    if (xhr0.status == 200) {
+      var response = xhr0.response
+      var inflatedData = pako.inflate(response)
+      var jsonData = JSON.parse(inflatedData)
+      console.log(jsonData)
+    } else {
+      console.log(123)
+    }
+  }
+  xhr0.send()
+  // console.log(this.Utf8ArrayToStr(new Uint8Array(pako.ungzip(locationJson))))
 }
 
 function onError(error) {

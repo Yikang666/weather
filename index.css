@@ -57,7 +57,7 @@
 
 .background {
   z-index: -1;
-  height: 90vh;
+  height: 560px;
   background: url(./assets/bg_first_cloudy.png) no-repeat;
   background-size: 100% 100%;
 }
