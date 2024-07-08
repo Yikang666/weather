@@ -4,7 +4,7 @@ function toast(msg, duration) {
   var m = document.createElement("div");
   m.innerHTML = msg;
   m.style.cssText =
-    "max-width: 70%;color: rgb(255, 255, 255);text-align: center;border-radius: 6px;padding: 4px 6px;position: fixed;top: 75%;left: 50%;transform: translate(-50%, 0);z-index: 99999999;background: rgba(0, 0, 0, 0.7);font-size: 12px;";
+    "max-width: 70%;color: rgb(255, 255, 255);text-align: center;border-radius: 6px;padding: 4px 6px;position: fixed;top: 75%;left: 50%;transform: translate(-50%, 0);z-index: 99999999;background: rgba(0, 0, 0, 0.75);font-size: 14px;";
   document.body.appendChild(m);
   setTimeout(function () {
     var d = 0.5;
@@ -21,6 +21,7 @@ function toast(msg, duration) {
 const xhr0 = new XMLHttpRequest();
 
 // 定位
+// 未完成
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(onSuccess, onError);
 } else {
@@ -65,3 +66,7 @@ function onError(error) {
       break;
   }
 }
+
+// 获取星期
+var week = "周" + "日一二三四五六".charAt(new Date().getDay());
+document.getElementById("day").innerHTML = week;

@@ -62,10 +62,10 @@
   background-size: 100% 100%;
 }
 
-.container .temp {
+.container .temp-now {
   margin-top: -120px;
   margin-bottom: -80px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 88px;
   font-family: "XType";
 }
@@ -89,4 +89,20 @@
   color: #8c8c8c;
   font-size: 14px;
   margin-top: 6px;
+}
+
+.container .a1 {
+  position: relative;
+  font-size: 14px;
+  margin: 44px 20px 0 20px;
+}
+
+.container .a1 .day {
+  margin-left: 14px;
+}
+
+.container .a1 .temp {
+  position: absolute;
+  right: 0;
+  top: 4px;
 }
