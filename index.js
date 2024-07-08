@@ -15,25 +15,54 @@ function toast(msg, duration) {
             document.body.removeChild(m);
         }, d * 1000);
     }, duration);
-}
+};
 
 // 发送请求
 const xhr = new XMLHttpRequest();
 
-// 获取实时天气
-function getToday() {
-  xhr.open('GET', 'http://pitaya.tianqiapis.com/?version=today&unit=m&language=zh&appid=test&appsecret=test888');
+// 定位并获取实时天气
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(onSuccess, onError);
+} else {
+  toast('您的浏览器不支持使用HTML5来获取地理位置服务');
+};
+
+function onSuccess(position) {
+  latitude = position.coords.latitude;
+  longitude = position.coords.longitude;
+  
+  xhr.open('GET', 'http://pitaya.tianqiapis.com/?version=today&unit=m&language=zh&appid=test&appsecret=test888&query=' + latitude + ',' + longitude);
   xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      var today = xhr.responseText;
-    }
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      today = JSON.parse(xhr.response);
+      city = today.city;
+      document.querySelector('.refresh').style.display = 'none';
+      document.querySelector(".city").innerHTML = city;
+      document.querySelector(".temp-now").innerHTML = today.day.temperature;
+      document.querySelector(".weather").innerHTML = today.day.phrase;
+      document.querySelector(".airq").innerHTML = '空气质量 ' + today.day.aqi.AIR.index;
+      document.querySelector('.a0').style.opacity = '1';
+    };
   };
   xhr.send();
-}
+};
 
-getToday();
- 
-
+function onError(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      toast('您拒绝了对获取地理位置的请求');
+      break;
+    case error.POSITION_UNAVAILABLE:
+      toast('定位失败，请打开位置服务');
+      break;
+    case error.TIMEOUT:
+      toast('请求您的地理位置超时');
+      break;
+    case error.UNKNOWN_ERROR:
+      toast('未知错误');
+      break;
+  }
+};
 
 // 获取星期
 var week = "周" + "日一二三四五六".charAt(new Date().getDay());

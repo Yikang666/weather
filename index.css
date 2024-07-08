@@ -43,6 +43,7 @@
 }
 
 .header .tips {
+  visibility: hidden;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -55,11 +56,50 @@
   margin-top: 4px;
 }
 
+.refresh {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.refresh svg {
+  height: 30px;
+}
+
+.refresh path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 80;
+  stroke-linecap: round;
+  stroke-dasharray: 2150 345;
+  stroke-dashoffset: -300;
+  animation: path 4s ease infinite;
+}
+
+@keyframes path {
+  0% {
+    stroke-dashoffset: -300;
+  }
+
+  100% {
+    stroke-dashoffset: 2195;
+  }
+}
+
+.refresh p{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+}
+
 .background {
   z-index: -1;
   height: 560px;
   background: url(./assets/bg_first_cloudy.png) no-repeat;
   background-size: 100% 100%;
+}
+
+.a0 {
+  opacity: 0;
+  transition: .5s;
 }
 
 .container .temp-now {
@@ -70,7 +110,7 @@
   font-family: "XType";
 }
 
-.container .unit {
+.container img {
   height: 68px;
   margin-left: 94px;
 }
@@ -105,4 +145,19 @@
   position: absolute;
   right: 0;
   top: 4px;
+}
+
+.c2 {
+  text-align: center;
+  font-size: 14px;
+}
+
+.c2 img {
+  height: 10px;
+  margin-left: 4px;
+}
+
+a {
+  color: #007AFF;
+  text-decoration: none;
 }
