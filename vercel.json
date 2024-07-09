@@ -1,15 +1,19 @@
 {
-  "rewrites": [
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "https://i5.weather.oppomobile.com/$1"
+    }
+  ],
+  "headers": [
     {
       "source": "/api/(.*)",
-      "has": [
+      "headers": [
         {
-          "type": "header",
           "key": "Access-Control-Allow-Origin",
           "value": "*"
         }
-      ],
-      "destination": "https://i5.weather.oppomobile.com/$1"
+      ]
     }
   ]
 }
