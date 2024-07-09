@@ -66,4 +66,4 @@ function onError(error) {
 
 // 获取星期
 var week = "周" + "日一二三四五六".charAt(new Date().getDay());
-document.getElementById("day").innerHTML = week;
+document.querySelector(".a1 .day").innerHTML = week;
