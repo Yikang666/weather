@@ -4,7 +4,8 @@
       "src": "/api/(.*)",
       "dest": "https://i5.weather.oppomobile.com/$1",
       "headers": {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/x-gzip;charset=UTF-8"
       },
       "continue": true
     }
