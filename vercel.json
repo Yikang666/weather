@@ -8,6 +8,15 @@
         "Content-Type": "application/x-gzip;charset=UTF-8"
       },
       "continue": true
+    },
+    {
+      "src": "/location/(.*)",
+      "dest": "https://location.apps.oppomobile.com/xlocations/v1/$1",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/x-gzip;charset=UTF-8"
+      },
+      "continue": true
     }
   ]
 }
