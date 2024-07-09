@@ -5,8 +5,8 @@
       "dest": "https://i5.weather.oppomobile.com/$1"
     },
     {
-      "src": "/location/(.*)",
-      "dest": "https://location.apps.oppomobile.com/xlocations/v1/$1"
+      "src": "/api2/(.*)",
+      "dest": "https://location.apps.oppomobile.com/$1"
     }
   ]
 }
