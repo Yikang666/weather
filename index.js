@@ -28,22 +28,32 @@ if (navigator.geolocation) {
 };
 
 function onSuccess(position) {
-  latitude = position.coords.latitude;
-  longitude = position.coords.longitude;
+  // latitude = position.coords.latitude;
+  // longitude = position.coords.longitude;
   
-  xhr.open('GET', 'http://pitaya.tianqiapis.com/?version=today&unit=m&language=zh&appid=test&appsecret=test888&query=' + latitude + ',' + longitude);
+  // xhr.open('GET', 'http://pitaya.tianqiapis.com/?version=today&unit=m&language=zh&appid=test&appsecret=test888&query=' + latitude + ',' + longitude);
+  // xhr.onreadystatechange = function() {
+  //   if (xhr.readyState == 4 && xhr.status == 200) {
+  //     today = JSON.parse(xhr.response);
+  //     city = today.city;
+  //     document.querySelector('.refresh').style.display = 'none';
+  //     document.querySelector(".city").innerHTML = city;
+  //     document.querySelector(".temp-now").innerHTML = today.day.temperature;
+  //     document.querySelector(".weather").innerHTML = today.day.phrase;
+  //     document.querySelector(".airq").innerHTML = '空气质量 ' + today.day.aqi.AIR.index;
+  //     document.querySelector('.a0').style.opacity = '1';
+  //   };
+  // };
+  latitude = position.coords.latitude.toFixed(2).replace('.', '')
+  longitude = position.coords.longitude.toFixed(2).replace('.', '')
+  
+  xhr.open('GET', '/api/xlocations/v1/' + latitude + '_' + longitude + '_zh-cn.json.gz')
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      today = JSON.parse(xhr.response);
-      city = today.city;
-      document.querySelector('.refresh').style.display = 'none';
-      document.querySelector(".city").innerHTML = city;
-      document.querySelector(".temp-now").innerHTML = today.day.temperature;
-      document.querySelector(".weather").innerHTML = today.day.phrase;
-      document.querySelector(".airq").innerHTML = '空气质量 ' + today.day.aqi.AIR.index;
-      document.querySelector('.a0').style.opacity = '1';
-    };
-  };
+      locationJson = xhr.response
+      console.log(this.Utf8ArrayToStr(new Uint8Array(pako.ungzip(locationJson))))
+    }
+  }
   xhr.send();
 };
 
