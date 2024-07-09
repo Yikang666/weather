@@ -12,6 +12,9 @@ module.exports = (req, res) => {
   // 创建代理对象并转发请求
   createProxyMiddleware({
     target,
-    changeOrigin: true
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api/': '/'
+    }
   })(req, res)
 }
