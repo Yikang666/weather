@@ -1,8 +1,8 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/proxy"
+      "src": "/api/(.*)",
+      "dest": "https://i5.weather.oppomobile.com/$1"
     }
   ]
 }
