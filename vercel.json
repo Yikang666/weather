@@ -1,14 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://i5.weather.oppomobile.com/$1",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/x-gzip;charset=UTF-8"
-      }
-    },
-    {
       "source": "/location/(.*)",
       "destination": "https://location.apps.oppomobile.com/xlocations/v1/$1",
       "headers": {
