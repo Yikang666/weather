@@ -19,8 +19,19 @@ function toast(msg, duration) {
 
 // 发送请求
 const xhr = new XMLHttpRequest();
+const apiUrl = 'https://api.weather.888-114514.eu.org';
 
-// 定位并获取实时天气
+function sendGetRequest(url, callback) {
+  xhr.open('GET', url);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      callback(xhr.response);
+    }
+  };
+  xhr.send();
+};
+
+// 定位
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(onSuccess, onError);
 } else {
@@ -28,9 +39,6 @@ if (navigator.geolocation) {
 };
 
 function onSuccess(position) {
-  // latitude = position.coords.latitude;
-  // longitude = position.coords.longitude;
-  
   // xhr.open('GET', 'http://pitaya.tianqiapis.com/?version=today&unit=m&language=zh&appid=test&appsecret=test888&query=' + latitude + ',' + longitude);
   // xhr.onreadystatechange = function() {
   //   if (xhr.readyState == 4 && xhr.status == 200) {
@@ -47,14 +55,11 @@ function onSuccess(position) {
   latitude = position.coords.latitude.toFixed(2).replace('.', '')
   longitude = position.coords.longitude.toFixed(2).replace('.', '')
   
-  xhr.open('GET', '/api/xlocations/v1/' + latitude + '_' + longitude + '_zh-cn.json.gz')
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      locationJson = xhr.response
-      console.log(this.Utf8ArrayToStr(new Uint8Array(pako.ungzip(locationJson))))
-    }
-  }
-  xhr.send();
+  sendGetRequest(apiUrl + '/location/' + latitude + '_' + longitude + '_zh-cn.json.gz', function (response) {
+    var city = JSON.parse(response).cities[0];
+    cityId = city.lk;
+    document.querySelector(".city").innerHTML = city.ln;
+  });
 };
 
 function onError(error) {
