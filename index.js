@@ -19,7 +19,6 @@ function toast(msg, duration) {
 
 // 发送请求
 const xhr = new XMLHttpRequest();
-const apiUrl = 'https://api.weather.888-114514.eu.org';
 
 function sendGetRequest(url, callback) {
   xhr.open('GET', url);
@@ -29,6 +28,21 @@ function sendGetRequest(url, callback) {
     }
   };
   xhr.send();
+};
+
+// 引入数据源获取天气
+function getWeather() {
+  var provider = 'accuweather';
+  var url = './api/' + provider + '.js';
+  
+  var script = document.createElement('script');
+  script.setAttribute('src', url);
+  document.querySelector('body').appendChild(script);
+};
+
+// DOM操作
+function dom(query, text) {
+  document.querySelector(query).innerHTML = text;
 };
 
 // 定位
@@ -52,14 +66,10 @@ function onSuccess(position) {
   //     document.querySelector('.a0').style.opacity = '1';
   //   };
   // };
-  latitude = position.coords.latitude.toFixed(2).replace('.', '')
-  longitude = position.coords.longitude.toFixed(2).replace('.', '')
+  latitude = position.coords.latitude;
+  longitude = position.coords.longitude;
   
-  sendGetRequest(apiUrl + '/location/' + latitude + '_' + longitude + '_zh-cn.json.gz', function (response) {
-    var city = JSON.parse(response).cities[0];
-    cityId = city.lk;
-    document.querySelector(".city").innerHTML = city.ln;
-  });
+  getWeather();
 };
 
 function onError(error) {
