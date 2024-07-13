@@ -97,11 +97,6 @@
   background-size: 100% 100%;
 }
 
-.a0 {
-  opacity: 0;
-  transition: .5s;
-}
-
 .container .temp-now {
   margin-top: -120px;
   margin-bottom: -80px;

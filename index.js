@@ -63,7 +63,6 @@ function onSuccess(position) {
   //     document.querySelector(".temp-now").innerHTML = today.day.temperature;
   //     document.querySelector(".weather").innerHTML = today.day.phrase;
   //     document.querySelector(".airq").innerHTML = '空气质量 ' + today.day.aqi.AIR.index;
-  //     document.querySelector('.a0').style.opacity = '1';
   //   };
   // };
   latitude = position.coords.latitude;
