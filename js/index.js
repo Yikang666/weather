@@ -33,7 +33,7 @@ function sendGetRequest(url, callback) {
 // 引入数据源获取天气
 function getWeather() {
   var provider = 'accuweather';
-  var url = './api/' + provider + '.js';
+  var url = '../js/api/' + provider + '.js';
   
   var script = document.createElement('script');
   script.setAttribute('src', url);

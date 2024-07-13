@@ -1,6 +1,6 @@
 @font-face {
   font-family: "XType";
-  src: url("./font/XType-Regular.otf");
+  src: url("../assets/font/XType-Regular.otf");
 }
 
 * {
@@ -26,7 +26,7 @@
   bottom: 27px;
   left: calc(100% - 40px);
   height: 20px;
-  background: url(./assets/city_btn.png) no-repeat;
+  background: url("../assets/city_btn.png") no-repeat;
   background-size: contain;
 }
 
@@ -37,7 +37,7 @@
   transform: translate(-50%, 0);
   width: 6px;
   height: 8px;
-  background: url(./assets/local_indicator_focused.png) no-repeat;
+  background: url("../assets/local_indicator_focused.png") no-repeat;
   background-size: contain;
   filter: invert(100%);
 }
@@ -93,7 +93,7 @@
 .background {
   z-index: -1;
   height: 560px;
-  background: url(./assets/bg_first_cloudy.png) no-repeat;
+  background: url("../assets/bg_first_cloudy.png") no-repeat;
   background-size: 100% 100%;
 }
 
