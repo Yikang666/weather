@@ -2,17 +2,18 @@
 function toast(msg, duration) {
     duration = isNaN(duration) ? 3000 : duration;
     var m = document.createElement("div");
+    m.setAttribute('id', 'toast');
     m.innerHTML = msg;
     m.style.cssText =
         "max-width: 70%;color: rgb(255, 255, 255);text-align: center;border-radius: 6px;padding: 4px 6px;position: fixed;top: 75%;left: 50%;transform: translate(-50%, 0);z-index: 99999999;background: rgba(0, 0, 0, 0.75);font-size: 14px;";
-    document.body.appendChild(m);
+    document.querySelector('html').appendChild(m);
     setTimeout(function() {
         var d = 0.5;
         m.style.webkitTransition =
             "-webkit-transform " + d + "s ease-in, opacity " + d + "s ease-in";
         m.style.opacity = "0";
         setTimeout(function() {
-            document.body.removeChild(m);
+            document.querySelector('html').removeChild(m);
         }, d * 1000);
     }, duration);
 };
@@ -32,8 +33,8 @@ function sendGetRequest(url, callback) {
 
 // 引入数据源获取天气
 function getWeather() {
-  var provider = 'accuweather';
-  var url = '../js/api/' + provider + '.js';
+  var provider = 'caiyun';
+  var url = './js/api/' + provider + '.js';
   
   var script = document.createElement('script');
   script.setAttribute('src', url);
@@ -90,4 +91,4 @@ function onError(error) {
 
 // 获取星期
 var week = "周" + "日一二三四五六".charAt(new Date().getDay());
-document.querySelector(".a1 .day").innerHTML = week;
+dom(".a1 .day", week);

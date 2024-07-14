@@ -5,57 +5,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>天气</title>
-  
+
   <link rel="icon" href="./favicon.png">
-  <link rel="stylesheet" href="./css/index.css"></link>
+  <link rel="stylesheet" href="./css/index.css">
+  </link>
 </head>
 
 <body>
-  <div class="header">
-    <p class="city">定位中</p>
-    <div class="city_btn"></div>
-    <div class="city_locate"></div>
-    <p class="tips">高温橙色预警</p>
-    
-    <div class="refresh">
-      <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-        <path class="path" d="M746.666667 853.333333H277.333333v-1.066666C169.536 841.6 85.333333 750.634667 85.333333 640c0-103.210667 73.301333-189.312 170.709334-209.066667A261.12 261.12 0 0 1 256 426.666667c0-141.376 114.624-256 256-256s256 114.624 256 256c0 1.429333 0 2.837333-0.042667 4.266666C865.365333 450.688 938.666667 536.789333 938.666667 640c0 110.613333-84.202667 201.578667-192 212.266667V853.333333z"></path>
-      </svg>
-      <p>页面刷新中</p>
-    </div>
+  <div class="start">
+    <img src="./favicon.png" width="88px">
+    <p class="p1">天气</p>
+    <p class="p2">数据加载中...</p>
   </div>
-  
-  <div class="container">
-    <div class="background"></div>
-    
-    <div class="a0">
-      <p class="temp-now">—</p>
-      <img src="./assets/centigrade.png"></img>
-      <div class="right">
-        <p class="weather">— —</p>
-        <p class="airq">空气质量 &nbsp—</p>
+
+  <div id="app">
+    <div class="header">
+      <p class="city">定位中</p>
+      <div class="city_btn"></div>
+      <div class="city_locate"></div>
+      <p class="tips">高温橙色预警</p>
+
+      <div class="refresh">
+        <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+          <path class="path" d="M746.666667 853.333333H277.333333v-1.066666C169.536 841.6 85.333333 750.634667 85.333333 640c0-103.210667 73.301333-189.312 170.709334-209.066667A261.12 261.12 0 0 1 256 426.666667c0-141.376 114.624-256 256-256s256 114.624 256 256c0 1.429333 0 2.837333-0.042667 4.266666C865.365333 450.688 938.666667 536.789333 938.666667 640c0 110.613333-84.202667 201.578667-192 212.266667V853.333333z"></path>
+        </svg>
+        <p>页面刷新中</p>
       </div>
     </div>
-    
-    <div class="a1">
-      今天
-      <span class="day">——</span>
-      <span class="temp">- ℃ / - ℃</span>
-    </div>
-    
-    <!-- 分时预报 7日预报 暂未完成 -->
-    <div class="a2"></div>
-    <div class="c1"></div>
-    
-    <div class="c2">
-      <a href="http://uc.src.weather.com.cn/mweather15d">
-        未来15日天气预报
-        <img src="./assets/warn_right_blue.png">
-      </a>
-    </div>
-    
-    <div class="d1">
-      
+
+    <div class="container">
+      <div class="background"></div>
+
+      <div class="a0">
+        <p class="temp-now">—</p>
+        <img src="./assets/centigrade.png">
+        <div class="right">
+          <p class="weather">— —</p>
+          <p class="airq">空气质量 &nbsp—</p>
+        </div>
+      </div>
+
+      <div class="a1">
+        今天
+        <span class="day">——</span>
+        <span class="temp">- ℃ / - ℃</span>
+      </div>
+
+      <!-- 分时预报 7日预报 暂未完成 -->
+      <div class="a2"></div>
+      <div class="c1"></div>
+
+      <div class="c2">
+        <a href="http://uc.src.weather.com.cn/mweather15d">
+          未来15日天气预报
+          <img src="./assets/warn_right_blue.png">
+        </a>
+      </div>
+
+      <div class="d1">
+
+      </div>
     </div>
   </div>
   

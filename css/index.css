@@ -9,6 +9,31 @@
   user-select: none;
 }
 
+#app {
+  opacity: 0;
+  transition: .3s;
+}
+
+.start {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -75%);
+  z-index: 999;
+  width: 100%;
+  background-color: #FFF;
+  text-align: center;
+}
+
+.start .p1 {
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.start .p2 {
+  font-size: 14px;
+  color: #A0A0A0;
+}
+
 .header {
   position: fixed;
   width: 100%;
