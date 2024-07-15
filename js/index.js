@@ -5,7 +5,7 @@ function toast(msg, duration) {
     m.setAttribute('id', 'toast');
     m.innerHTML = msg;
     m.style.cssText =
-        "max-width: 70%;color: rgb(255, 255, 255);text-align: center;border-radius: 6px;padding: 4px 6px;position: fixed;top: 75%;left: 50%;transform: translate(-50%, 0);z-index: 99999999;background: rgba(0, 0, 0, 0.75);font-size: 14px;";
+        "max-width: 70%;color: rgb(255, 255, 255);text-align: center;border-radius: 6px;padding: 4px 6px;position: fixed;top: 80%;left: 50%;transform: translate(-50%, 0);z-index: 99999999;background: rgba(0, 0, 0, 0.75);font-size: 14px;";
     document.querySelector('html').appendChild(m);
     setTimeout(function() {
         var d = 0.5;
@@ -75,13 +75,13 @@ function onSuccess(position) {
 function onError(error) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
-      toast('您拒绝了对获取地理位置的请求');
+      toast('定位失败，请允许定位请求以获得更加精准的天气信息');
       break;
     case error.POSITION_UNAVAILABLE:
-      toast('定位失败，请打开位置服务');
+      toast('定位失败，请打开位置服务以获得更加精准的天气信息');
       break;
     case error.TIMEOUT:
-      toast('请求您的地理位置超时');
+      toast('请求您的地理位置超时，请重试');
       break;
     case error.UNKNOWN_ERROR:
       toast('未知错误');
