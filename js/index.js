@@ -54,18 +54,6 @@ if (navigator.geolocation) {
 };
 
 function onSuccess(position) {
-  // xhr.open('GET', 'http://pitaya.tianqiapis.com/?version=today&unit=m&language=zh&appid=test&appsecret=test888&query=' + latitude + ',' + longitude);
-  // xhr.onreadystatechange = function() {
-  //   if (xhr.readyState == 4 && xhr.status == 200) {
-  //     today = JSON.parse(xhr.response);
-  //     city = today.city;
-  //     document.querySelector('.refresh').style.display = 'none';
-  //     document.querySelector(".city").innerHTML = city;
-  //     document.querySelector(".temp-now").innerHTML = today.day.temperature;
-  //     document.querySelector(".weather").innerHTML = today.day.phrase;
-  //     document.querySelector(".airq").innerHTML = '空气质量 ' + today.day.aqi.AIR.index;
-  //   };
-  // };
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   
@@ -84,9 +72,11 @@ function onError(error) {
       toast('请求您的地理位置超时，请重试');
       break;
     case error.UNKNOWN_ERROR:
-      toast('未知错误');
+      toast('定位出现未知错误');
       break;
-  }
+  };
+  
+  
 };
 
 // 获取星期

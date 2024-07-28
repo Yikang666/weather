@@ -123,16 +123,18 @@
 }
 
 .container .temp-now {
+  position: relative;
   margin-top: -120px;
   margin-bottom: -80px;
-  margin-left: 18px;
+  margin-left: 16px;
   font-size: 88px;
   font-family: "XType";
 }
 
-.container img {
+.container .temp-now img {
+  position: absolute;
   height: 68px;
-  margin-left: 94px;
+  margin-top: 26px;
 }
 
 .container .right {
