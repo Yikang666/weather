@@ -21,7 +21,7 @@ function getCity() {
 };
 
 function getCityByIP() {
-  sendGetRequest('http://api.ipify.cn/', function(response) {
+  sendGetRequest('https://api.ipify.cn/', function(response) {
     var ip = response;
     sendGetRequest('https://api.weather.888-114514.eu.org/ip?ip=' + ip, function(response) {
       city = (JSON.parse(response).regions.pop());
