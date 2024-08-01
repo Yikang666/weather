@@ -19,6 +19,7 @@ function toast(msg, duration) {
 };
 
 // 发送请求
+// XML 普通GET请求
 const xhr = new XMLHttpRequest();
 
 function sendGetRequest(url, callback) {
@@ -49,3 +50,6 @@ function dom(query, text) {
 // 获取星期
 var week = "周" + "日一二三四五六".charAt(new Date().getDay());
 dom(".a1 .day", week);
+
+// 当前时间戳
+time = Date.now();

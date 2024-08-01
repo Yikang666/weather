@@ -5,8 +5,6 @@
 
 // 获取城市函数
 function getCity() {
-  time = Date.now();
-  
   sendGetRequest(`https://api.tianditu.gov.cn/geocoder?postStr={'lon':` + longitude + `,'lat':` + latitude + `,'ver':1}&type=geocode&tk=922317ec85e9364922d3e97f06ab54fc`, function(response) {
     var address = JSON.parse(response).result.addressComponent;
 
@@ -17,8 +15,21 @@ function getCity() {
     };
 
     localStorage.setItem('city', city);
-    localStorage.setItem('time', time);
+    localStorage.setItem('time', Date.now());
     dom('.city', city);
+  });
+};
+
+function getCityByIP() {
+  sendGetRequest('http://api.ipify.cn/', function(response) {
+    var ip = response;
+    sendGetRequest('https://api.weather.888-114514.eu.org/ip?ip=' + ip, function(response) {
+      city = (JSON.parse(response).regions.pop());
+
+      localStorage.setItem('city', city);
+      localStorage.setItem('time', Date.now());
+      dom('.city', city);
+    });
   });
 };
 
@@ -62,9 +73,20 @@ function onError(error) {
       toast('定位出现未知错误');
       break;
   };
+
+  if (localStorage.getItem('city') === null) {
+    getCityByIP();
+  } else {
+    if (time - localStorage.getItem('time') >= 1800000) {
+      getCityByIP();
+    } else {
+      city = localStorage.getItem('city');
+      dom('.city', city);
+    };
+  };
 };
 
 setTimeout(function() {
   document.querySelector('.start').remove();
   document.querySelector('#app').style.opacity = '1';
-}, 1500);
+}, 2000);
