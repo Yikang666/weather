@@ -1,0 +1,13 @@
+{
+  "name": "天气",
+  "description": "无广告、简洁、好用的天气应用",
+  "start_url": "./",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
