@@ -10,6 +10,11 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+a {
+  color: #007aff;
+  text-decoration: none;
+}
+
 #app {
   opacity: 0;
   transition: 0.1s;
@@ -119,6 +124,10 @@
   font-size: 10px;
 }
 
+.container > :not(.background) {
+  margin: 0 20px;
+}
+
 .background {
   z-index: -1;
   height: 560px;
@@ -130,7 +139,6 @@
   position: relative;
   margin-top: -120px;
   margin-bottom: -80px;
-  margin-left: 16px;
   font-size: 88px;
   font-family: "XType";
 }
@@ -143,7 +151,6 @@
 
 .container .right {
   text-align: right;
-  margin-right: 20px;
   margin-top: -96px;
 }
 
@@ -160,7 +167,7 @@
 .container .a1 {
   position: relative;
   font-size: 14px;
-  margin: 44px 20px 0 20px;
+  margin-top: 44px;
 }
 
 .container .a1 .day {
@@ -173,6 +180,42 @@
   top: 4px;
 }
 
+.container .a2 {
+  margin: 10px 0 0 0;
+  height: 120px;
+  width: 100%;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.container .a2 ul {
+  display: inline-block;
+}
+
+.container .a2 li {
+  margin-right: 36px;
+  display: inline-block;
+}
+
+.container .a2 li:first-child {
+  margin-left: 20px;
+}
+
+.container .a2 li:last-child {
+  margin-right: 20px;
+}
+
+.container .a2 p {
+  color: #8c8c8c;
+  font-size: 12px;
+  text-align: center;
+  line-height: 26px;
+}
+
+.container .a2 img {
+  width: 32px;
+}
+
 .c2 {
   text-align: center;
   font-size: 14px;
@@ -181,9 +224,4 @@
 .c2 img {
   height: 10px;
   margin-left: 4px;
-}
-
-a {
-  color: #007aff;
-  text-decoration: none;
 }
