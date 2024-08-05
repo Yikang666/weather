@@ -12,7 +12,7 @@
 
 #app {
   opacity: 0;
-  transition: .1s;
+  transition: 0.1s;
 }
 
 .start {
@@ -21,7 +21,7 @@
   transform: translate(0, -75%);
   z-index: 999;
   width: 100%;
-  background-color: #FFF;
+  background-color: #fff;
   text-align: center;
 }
 
@@ -32,7 +32,7 @@
 
 .start .p2 {
   font-size: 14px;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 .header {
@@ -114,7 +114,7 @@
   }
 }
 
-.refresh p{
+.refresh p {
   color: rgba(255, 255, 255, 0.5);
   font-size: 10px;
 }
@@ -184,6 +184,6 @@
 }
 
 a {
-  color: #007AFF;
+  color: #007aff;
   text-decoration: none;
 }
