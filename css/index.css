@@ -8,6 +8,7 @@
   padding: 0;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scrollbar-width: none;
 }
 
 a {
@@ -185,7 +186,7 @@ a {
   height: 120px;
   width: 100%;
   white-space: nowrap;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .container .a2 ul {

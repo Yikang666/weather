@@ -77,7 +77,7 @@ setTimeout(function() {
 
 // BetterScroll配置
 window.onload = function() {
-  var scroll = new BScroll('.container .a2', {
+  var scrollA1 = new BScroll('.container .a2', {
     scrollX: true,
     bounceTime: 500,
     swipeBounceTime: 200,
