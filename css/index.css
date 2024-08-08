@@ -3,6 +3,10 @@
   src: url("../assets/font/XType-Regular.otf");
 }
 
+:root {
+  --pixel-ratio: 1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -31,13 +35,17 @@ a {
   text-align: center;
 }
 
+.start img {
+  width: calc(88px * var(--pixel-ratio));
+}
+
 .start .p1 {
-  margin-top: 8px;
-  font-size: 22px;
+  margin-top: calc(8px * var(--pixel-ratio));
+  font-size: calc(22px * var(--pixel-ratio));
 }
 
 .start .p2 {
-  font-size: 14px;
+  font-size: calc(14px * var(--pixel-ratio));
   color: #a0a0a0;
 }
 
@@ -48,17 +56,17 @@ a {
 
 .header .city {
   color: #ffffff;
-  font-size: 24px;
+  font-size: calc(24px * var(--pixel-ratio));
   text-align: center;
-  margin-top: 24px;
+  margin-top: calc(24px * var(--pixel-ratio));
 }
 
 .header a {
   display: block;
   position: relative;
-  bottom: 27px;
-  left: calc(100% - 40px);
-  height: 20px;
+  bottom: calc(27px * var(--pixel-ratio));
+  left: calc(100% - calc(40px * var(--pixel-ratio)));
+  height: calc(20px * var(--pixel-ratio));
 }
 
 .header a img {
@@ -67,11 +75,11 @@ a {
 
 .header .city_locate {
   position: absolute;
-  margin-top: -18px;
+  margin-top: calc(-18px * var(--pixel-ratio));
   left: 50%;
   transform: translate(-50%, 0);
-  width: 6px;
-  height: 8px;
+  width: calc(6px * var(--pixel-ratio));
+  height: calc(8px * var(--pixel-ratio));
   background: url("../assets/local_indicator_focused.png") no-repeat;
   background-size: contain;
   filter: invert(100%);
@@ -84,20 +92,20 @@ a {
   transform: translate(-50%, 0);
   text-align: center;
   color: #ffffff;
-  font-size: 10px;
-  padding: 3px 8px;
+  font-size: calc(10px * var(--pixel-ratio));
+  padding: calc(3px * var(--pixel-ratio)) calc(8px * var(--pixel-ratio));
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-  margin-top: 4px;
+  border-radius: calc(4px * var(--pixel-ratio));
+  margin-top: calc(4px * var(--pixel-ratio));
 }
 
 .refresh {
-  margin-top: 28px;
+  margin-top: calc(28px * var(--pixel-ratio));
   text-align: center;
 }
 
 .refresh svg {
-  height: 30px;
+  height: calc(30px * var(--pixel-ratio));
 }
 
 .refresh path {
@@ -122,68 +130,68 @@ a {
 
 .refresh p {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 10px;
+  font-size: calc(10px * var(--pixel-ratio));
 }
 
 .container > :not(.background) {
-  margin: 0 20px;
+  margin: 0 calc(20px * var(--pixel-ratio));
 }
 
 .background {
   z-index: -1;
-  height: 560px;
+  height: calc(560px * var(--pixel-ratio));
   background: url("../assets/bg_first_cloudy.png") no-repeat;
   background-size: 100% 100%;
 }
 
 .container .temp-now {
   position: relative;
-  margin-top: -120px;
-  margin-bottom: -80px;
-  font-size: 88px;
+  margin-top: calc(-120px * var(--pixel-ratio));
+  margin-bottom: calc(-80px * var(--pixel-ratio));
+  font-size: calc(88px * var(--pixel-ratio));
   font-family: "XType";
 }
 
 .container .temp-now img {
   position: absolute;
-  height: 68px;
-  margin-top: 26px;
+  height: calc(68px * var(--pixel-ratio));
+  margin-top: calc(26px * var(--pixel-ratio));
 }
 
 .container .right {
   text-align: right;
-  margin-top: -96px;
+  margin-top: calc(-96px * var(--pixel-ratio));
 }
 
 .container .right .weather {
-  font-size: 34px;
+  font-size: calc(34px * var(--pixel-ratio));
 }
 
 .container .right .airq {
   color: #8c8c8c;
-  font-size: 14px;
-  margin-top: 6px;
+  font-size: calc(14px * var(--pixel-ratio));
+  margin-top: calc(6px * var(--pixel-ratio));
 }
 
 .container .a1 {
   position: relative;
-  font-size: 14px;
-  margin-top: 44px;
+  font-size: calc(14px * var(--pixel-ratio));
+  margin-top: calc(44px * var(--pixel-ratio));
 }
 
 .container .a1 .day {
-  margin-left: 14px;
+  margin-left: calc(14px * var(--pixel-ratio));
 }
 
 .container .a1 .temp {
   position: absolute;
   right: 0;
-  top: 4px;
+  top: calc(4px * var(--pixel-ratio));
 }
 
 .container .a2 {
-  margin: 10px 0 0 0;
-  height: 120px;
+  margin: calc(10px * var(--pixel-ratio)) 0 0 0;
+  height: calc(120px * var(--pixel-ratio));
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -194,35 +202,35 @@ a {
 }
 
 .container .a2 li {
-  margin-right: 36px;
+  margin-right: calc(36px * var(--pixel-ratio));
   display: inline-block;
 }
 
 .container .a2 li:first-child {
-  margin-left: 20px;
+  margin-left: calc(20px * var(--pixel-ratio));
 }
 
 .container .a2 li:last-child {
-  margin-right: 20px;
+  margin-right: calc(20px * var(--pixel-ratio));
 }
 
 .container .a2 p {
   color: #8c8c8c;
-  font-size: 12px;
+  font-size: calc(12px * var(--pixel-ratio));
   text-align: center;
-  line-height: 26px;
+  line-height: calc(26px * var(--pixel-ratio));
 }
 
 .container .a2 img {
-  width: 32px;
+  width: calc(32px * var(--pixel-ratio));
 }
 
 .c2 {
   text-align: center;
-  font-size: 14px;
+  font-size: calc(14px * var(--pixel-ratio));
 }
 
 .c2 img {
-  height: 10px;
-  margin-left: 4px;
+  height: calc(10px * var(--pixel-ratio));
+  margin-left: calc(4px * var(--pixel-ratio));
 }
