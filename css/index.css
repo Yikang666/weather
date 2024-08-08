@@ -133,7 +133,7 @@ a {
   font-size: calc(10px * var(--pixel-ratio));
 }
 
-.container > :not(.background) {
+.container> :not(.background) {
   margin: 0 calc(20px * var(--pixel-ratio));
 }
 
@@ -190,8 +190,8 @@ a {
 }
 
 .container .a2 {
-  margin: calc(10px * var(--pixel-ratio)) 0 0 0;
-  height: calc(120px * var(--pixel-ratio));
+  margin: calc(10px * var(--pixel-ratio)) 0 calc(20px * var(--pixel-ratio)) 0;
+  height: calc(115px * var(--pixel-ratio));
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -233,4 +233,40 @@ a {
 .c2 img {
   height: calc(10px * var(--pixel-ratio));
   margin-left: calc(4px * var(--pixel-ratio));
+}
+
+.d1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: calc(46px * var(--pixel-ratio)) calc(14px * var(--pixel-ratio)) 0 calc(14px * var(--pixel-ratio));
+}
+
+.d1 div {
+  text-align: center;
+  width: calc(50px * var(--pixel-ratio));
+}
+
+.d1 div:nth-child(3n-1) {
+  padding: 0 calc(70px * var(--pixel-ratio));
+}
+
+.d1 div:nth-child(-n+3) {
+  margin-bottom: calc(44px * var(--pixel-ratio));
+}
+
+.d1 img {
+  width: calc(30px * var(--pixel-ratio));
+}
+
+.d1 div :nth-child(2) {
+  margin-top: calc(6px * var(--pixel-ratio));
+  color: #4d4d4d;
+  font-size: calc(13px * var(--pixel-ratio));
+  line-height: calc(13px * var(--pixel-ratio));
+}
+
+.d1 div p:last-child {
+  color: #8c8c8c;
+  font-size: calc(11px * var(--pixel-ratio));
 }

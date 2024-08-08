@@ -99,5 +99,6 @@ window.onload = function() {
     bounceTime: 500,
     swipeBounceTime: 200,
     deceleration: 0.002,
+    eventPassthrough: 'vertical'
   });
 }
