@@ -17,7 +17,7 @@ self.addEventListener("install", function (event) {
         "/assets/humidity.png",
         "/assets/fengli.png",
         "/assets/air_pressure.png",
-        "https://jsd.onmicrosoft.cn/npm/@better-scroll/core@2.5.1/dist/core.min.js",
+        "https://npm.onmicrosoft.cn/@better-scroll/core@2.5.1/dist/core.min.js",
       ]);
     })
   );

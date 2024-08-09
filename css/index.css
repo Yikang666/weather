@@ -74,10 +74,7 @@ a {
 }
 
 .header .city_locate {
-  position: absolute;
-  margin-top: calc(-18px * var(--pixel-ratio));
-  left: 50%;
-  transform: translate(-50%, 0);
+  margin: calc(-18px * var(--pixel-ratio)) auto 0 auto;
   width: calc(6px * var(--pixel-ratio));
   height: calc(8px * var(--pixel-ratio));
   background: url("../assets/local_indicator_focused.png") no-repeat;
@@ -283,7 +280,7 @@ a {
 h1 {
   text-align: center;
   padding-top: calc(42px * var(--pixel-ratio));
-  font-size: 14px;
+  font-size: calc(14px * var(--pixel-ratio));
   font-weight: normal;
   -webkit-text-stroke: .1px #000;
 }
@@ -293,6 +290,6 @@ h1 {
 }
 
 .e1 img {
-  margin: 10px 0;
-  width: 80px;
+  margin: calc(10px * var(--pixel-ratio)) 0;
+  width: calc(80px * var(--pixel-ratio));
 }
