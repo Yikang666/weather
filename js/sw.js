@@ -11,7 +11,13 @@ self.addEventListener("install", function (event) {
         "/assets/warn_right_blue.png",
         "/assets/local_indicator_focused.png",
         "/assets/bg_first_cloudy.png",
-        "https://cdn.jsdmirror.com/npm/@better-scroll/core@2.5.1/dist/core.min.js",
+        "/assets/apparent_temperature.png",
+        "/assets/visibility.png",
+        "/assets/ziwai.png",
+        "/assets/humidity.png",
+        "/assets/fengli.png",
+        "/assets/air_pressure.png",
+        "https://jsd.onmicrosoft.cn/npm/@better-scroll/core@2.5.1/dist/core.min.js",
       ]);
     })
   );

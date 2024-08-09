@@ -3,12 +3,6 @@ if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
       .register("./js/sw.js")
-    // .then(function (registration) {
-    //   console.log("Service Worker 注册成功:", registration);
-    // })
-    // .catch(function (error) {
-    //   console.error("Service Worker 注册失败:", error);
-    // });
   });
 }
 
@@ -86,14 +80,8 @@ function dom(query, text) {
 var week = "周" + "日一二三四五六".charAt(new Date().getDay());
 dom(".a1 .day", week);
 
-// 两秒后隐藏启动界面
-setTimeout(function() {
-  document.querySelector(".start").remove();
-  document.querySelector("#app").style.opacity = "1";
-}, 2000);
-
-// BetterScroll配置
 window.onload = function() {
+  // BetterScroll配置
   var scrollA1 = new BScroll(".container .a2", {
     scrollX: true,
     bounceTime: 500,
@@ -101,4 +89,10 @@ window.onload = function() {
     deceleration: 0.002,
     eventPassthrough: 'vertical'
   });
+
+  // 两秒后隐藏启动界面
+  setTimeout(function() {
+    document.querySelector(".start").remove();
+    document.querySelector("#app").style.opacity = "1";
+  }, 2000);
 }
