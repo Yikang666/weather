@@ -291,5 +291,5 @@ h1 {
 
 .e1 img {
   margin: calc(10px * var(--pixel-ratio)) 0;
-  width: calc(80px * var(--pixel-ratio));
+  width: calc(70px * var(--pixel-ratio));
 }
