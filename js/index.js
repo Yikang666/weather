@@ -86,7 +86,6 @@ window.onload = function() {
   ScrollTrigger.create({
     start: 'top',
     end: (420 * pixelRatio) + 'px',
-    markers: true,
     scrub: true,
     animation: gsap.timeline()
       .to('.city', { xPercent: -36, color: '#000', scale: 0.8 })
