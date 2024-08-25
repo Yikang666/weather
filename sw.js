@@ -1,6 +1,6 @@
-self.addEventListener("install", function (event) {
+self.addEventListener("install", function(event) {
   event.waitUntil(
-    caches.open("my-cache-name").then(function (cache) {
+    caches.open("site-cache").then(function(cache) {
       return cache.addAll([
         "/favicon.ico",
         "/js/locate.js",
@@ -17,26 +17,18 @@ self.addEventListener("install", function (event) {
         "/assets/humidity.png",
         "/assets/fengli.png",
         "/assets/air_pressure.png",
-        "https://npm.onmicrosoft.cn/@better-scroll/core@2.5.1/dist/core.min.js",
       ]);
     })
   );
 });
 
-self.addEventListener("fetch", function (event) {
+self.addEventListener("fetch", function(event) {
   event.respondWith(
-    caches.match(event.request).then(function (response) {
+    caches.match(event.request).then(function(response) {
       if (response) {
         return response;
       }
-
-      return fetch(event.request).then(function (response) {
-        const cacheCopy = response.clone();
-        caches.open("my-cache-name").then(function (cache) {
-          cache.put(event.request, cacheCopy);
-        });
-        return response;
-      });
+      return fetch(event.request);
     })
   );
 });

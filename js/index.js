@@ -2,12 +2,13 @@
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
-      .register("./js/sw.js")
+      .register("/sw.js", { scope: "/" })
   });
 }
 
 // CSS根据像素比进行响应式设计
-document.documentElement.style.setProperty('--pixel-ratio', 3 / window.devicePixelRatio);
+var pixelRatio = 3 / window.devicePixelRatio;
+document.documentElement.style.setProperty('--pixel-ratio', pixelRatio);
 
 // 仿安卓Toast提示
 function toast(msg, duration) {
@@ -81,6 +82,19 @@ var week = "周" + "日一二三四五六".charAt(new Date().getDay());
 dom(".a1 .day", week);
 
 window.onload = function() {
+  // 滚动动画
+  ScrollTrigger.create({
+    start: 'top',
+    end: (420 * pixelRatio) + 'px',
+    markers: true,
+    scrub: true,
+    animation: gsap.timeline()
+      .to('.city', { xPercent: -36, color: '#000', scale: 0.8 })
+      .to('.header a, .city_locate, .tips, .refresh', { opacity: 0 }, 0)
+      .to('.background', { yPercent: -20 }, 0)
+      .to('hr, .header .temp', { opacity: 1 }, 0.25)
+  });
+
   // BetterScroll配置
   var scrollA1 = new BScroll(".container .a2", {
     scrollX: true,
