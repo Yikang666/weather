@@ -145,6 +145,16 @@ hr {
   margin: calc(-35px * var(--pixel-ratio)) calc(22px * var(--pixel-ratio)) 0 0;
 }
 
+.header .white {
+  width: 100%;
+  height: calc(53px * var(--pixel-ratio));
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  opacity: 0;
+  z-index: -1;
+}
+
 .container> :not(.background) {
   margin: 0 calc(20px * var(--pixel-ratio));
 }

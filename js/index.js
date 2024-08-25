@@ -83,6 +83,7 @@ dom(".a1 .day", week);
 
 window.onload = function() {
   // 滚动动画
+  gsap.to('.city', { scale: 1 })
   ScrollTrigger.create({
     start: 'top',
     end: (420 * pixelRatio) + 'px',
@@ -92,6 +93,17 @@ window.onload = function() {
       .to('.header a, .city_locate, .tips, .refresh', { opacity: 0 }, 0)
       .to('.background', { yPercent: -20 }, 0)
       .to('hr, .header .temp', { opacity: 1 }, 0.25)
+  });
+  
+  ScrollTrigger.create({
+    start: (330 * pixelRatio) + 'px',
+    end: (400 * pixelRatio) + 'px',
+    scrub: true,
+    animation: gsap.timeline()
+      .to('hr', { marginLeft: 0, marginRight: 0, height: pixelRatio, y: -14 * pixelRatio })
+      .to('.header .white', { opacity: 1 }, 0)
+      .fromTo('.city', { scale: 0.8 }, { scale: 0.65, y: -8 }, 0)
+      .to('.header .temp', { y: -6 }, 0)
   });
 
   // BetterScroll配置
