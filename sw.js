@@ -17,6 +17,14 @@ self.addEventListener("install", function(event) {
         "/assets/humidity.png",
         "/assets/fengli.png",
         "/assets/air_pressure.png",
+        "/assets/makeup_index.png",
+        "/assets/motion_index.png",
+        "/assets/cold_index.png",
+        "/assets/clothing_index.png",
+        "/assets/traffic_index.png",
+        "/assets/tourism_index.png",
+        "/assets/morning_exercise_index.png",
+        "/assets/logo_caiyun.png"
       ]);
     })
   );

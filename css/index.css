@@ -63,6 +63,7 @@ a {
 }
 
 .header a {
+  z-index: 10;
   display: block;
   position: relative;
   bottom: calc(27px * var(--pixel-ratio));
